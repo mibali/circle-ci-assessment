@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   test:
     docker:
-      - image: circleci/node:18  # Use a Node.js 18 compatible Docker image
+      - image: circleci/node:latest  # Use a Node.js 18 compatible Docker image
     steps:
       - checkout
       - run:
