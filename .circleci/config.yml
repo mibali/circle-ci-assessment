@@ -2,7 +2,8 @@ version: 2.1
 
 jobs:
   test:
-    executor: node-executor
+    docker:
+      - image: circleci/node:18  # Use a Node.js 18 compatible Docker image
     steps:
       - checkout
       - run:
@@ -22,5 +23,4 @@ workflows:
   version: 2
   test:
     jobs:
-      - build
-
+      - test  # Correct the job name to match the one defined above
