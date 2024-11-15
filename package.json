@@ -8,7 +8,8 @@
     "puppeteer": "^23.8.0"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "echo 'Building app...'"  
   },
   "keywords": [],
   "author": "",
