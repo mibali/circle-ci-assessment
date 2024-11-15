@@ -25,4 +25,4 @@ workflows:
   version: 2
   test:
     jobs:
-      - test  # Correct the job name to match the one defined above
+      - build_and_test  # Correct the job name to match the one defined above
