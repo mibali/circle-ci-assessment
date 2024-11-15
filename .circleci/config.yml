@@ -1,19 +1,22 @@
 version: 2.1
 
 jobs:
-  build:
-    docker:
-      - image: circleci/node:latest
+  test:
+    executor: node-executor
     steps:
       - checkout
       - run:
+          name: Clean npm cache
+          command: npm cache clean --force
+      - run:
+          name: Delete node_modules and package-lock.json
+          command: rm -rf node_modules package-lock.json
+      - run:
           name: Install dependencies
-          command: |
-            npm install
+          command: npm install
       - run:
           name: Run tests
-          command: |
-            npm test
+          command: npm test
 
 workflows:
   version: 2
