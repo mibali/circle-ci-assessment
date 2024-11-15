@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text App</title>
+</head>
+<body>
+    <h1>Click the button for random text:</h1>
+    <button id="randomButton">Get Random Text</button>
+    <p id="randomText"></p>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const button = document.getElementById('randomButton');
+            const randomTextElement = document.getElementById('randomText');
+            
+            button.addEventListener('click', () => {
+                const randomTexts = [
+                    'Hello World!',
+                    'Random is fun!',
+                    'Click me again!',
+                    'JavaScript is cool!',
+                    'This is some random text!'
+                ];
+                const randomIndex = Math.floor(Math.random() * randomTexts.length);
+                randomTextElement.textContent = randomTexts[randomIndex];
+            });
+        });
+    </script>
+</body>
+</html>
